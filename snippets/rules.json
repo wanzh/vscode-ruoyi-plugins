@@ -1,0 +1,71 @@
+{
+  "ruoyi rules require": {
+    "prefix": "lrules-require",
+    "description": "elementUI规则代码块",
+    "body": ["{ required: true, message: '${1}不能为空', trigger: 'blur' },"]
+  },
+  "ruoyi rules type": {
+    "prefix": "lrules type",
+    "description": "elementUI规则代码块",
+    "body": [
+      "{",
+      "    type: '${1|string,number,integer,float,boolean,array,object,enum,method,regexp,date,url,email,hex,any|}',",
+      "    message: '${2:输入错误}',",
+      "    trigger: ['blur', 'change']",
+      "},",
+      ""
+    ]
+  },
+  "ruoyi rules pattern": {
+    "prefix": "lrules pattern",
+    "description": "elementUI规则代码块",
+    "body": [
+      "{",
+      "    pattern: /$1/,",
+      "    message: '${2:输入错误}',",
+      "    trigger: 'blur'",
+      "},"
+    ]
+  },
+  "ruoyi rules validator": {
+    "prefix": "lrules validator",
+    "description": "elementUI规则代码块",
+    "body": ["{ required: true, validator: ${1}, trigger: 'blur' },", ""]
+  },
+  "ruoyi rules length": {
+    "prefix": "lrules length",
+    "description": "elementUI规则代码块",
+    "body": [
+      "{ min: ${1:6}, max: ${2:20}, message: '长度在 6 到 20 个字符', trigger: 'blur' },"
+    ]
+  },
+  "ruoyi validator function": {
+    "prefix": "lvalidator func",
+    "description": "elementUI规则验证方法代码块",
+    "body": [
+      "const is${1:title}Valid = (rule, value, callback) => {\r",
+      "  if (${2:false}) {\r",
+      "    callback(new Error('${3:验证失败}'));\r",
+      "  } else {\r",
+      "    callback();\r",
+      "  }\r",
+      "};\r",
+      ""
+    ]
+  },
+  "ruyi form vlidate": {
+    "prefix": "lform vlidate",
+    "description": "elementUI表单验证代码块",
+    "body": [
+      "this.$refs[\"form\"].validate((valid) => {\r",
+      "  if (valid) {\r",
+      "    ${1:updateDemo}().then(\r",
+      "      (response) => {\r",
+      "        this.\\$modal.msgSuccess(\"${2:修改成功}\");\r",
+      "      }\r",
+      "    );\r",
+      "  }\r",
+      "});"
+    ]
+  }
+}

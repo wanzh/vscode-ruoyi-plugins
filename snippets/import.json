@@ -1,0 +1,14 @@
+{
+  "import from api": {
+    "prefix": "limport_api",
+    "body": ["import { ${2} } from './api/${1}'"]
+  },
+  "import from utils": {
+    "prefix": "limport_util",
+    "body": ["import { ${1} } from '@/utils/${2}'"]
+  }，
+  "import from dict": {
+    "prefix": "limport_dict",
+    "body": ["import { ${1} } from '@/dict/${2}'"]
+  }
+}

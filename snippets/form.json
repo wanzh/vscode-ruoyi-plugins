@@ -1,0 +1,68 @@
+{
+  "el-form-item input": {
+    "prefix": "lform-item_input_trim",
+    "body": [
+      "<el-form-item label='${1}' style='width: 250px'>",
+      "\t<el-input v-model.trim='${2}'  placeholder='请输入${1}'></el-input>",
+      "</el-form-item>",
+      "${0}"
+    ]
+  },
+  "el-form-item input number": {
+    "prefix": "lform-item_input_number",
+    "body": [
+      "<el-form-item label='${1}' style='width: 250px'>",
+      "\t<el-input v-model.number='${2}' type='number' placeholder='请输入${1}'></el-input>",
+      "</el-form-item>",
+      "${0}"
+    ]
+  },
+  "el-form-item switch": {
+    "prefix": "lform-item__switch",
+    "body": [
+      "<el-form-item label='${1}'>",
+      "\t<el-switch v-model='${2}' active-color='#13ce66' inactive-color='#ff4949'/>",
+      "</el-form-item>",
+      "${0}"
+    ]
+  },
+  "el-form-item select": {
+    "prefix": "lform-item_select",
+    "body": [
+      "<el-form-item label='${1}'>",
+      "\t<el-select v-model='${2}' placeholder='请选择${1}'>",
+      "\t\t<el-option v-for='item in ${4}' :key='item.value' :label='item.label' :value='item.value'>",
+      "\t\t</el-option>",
+      "\t</el-select>",
+      "</el-form-item>",
+      "${0}"
+    ]
+  },
+  "el-form-item_dateTime": {
+    "prefix": "lform-item_dateTime",
+    "body": [
+      "<el-form-item label='${1}'>",
+      "\t <dateTime v-model='${2}' />",
+      "</el-form-item>",
+      "${0}"
+    ]
+  },
+  "el-form-item_dateRange": {
+    "prefix": "lform-item_dateRange",
+    "body": [
+      "<el-form-item label='${1}'>",
+      "\t<date-range :start.sync='${2:start_time}' :end.sync='${3:end_time}' />",
+      "</el-form-item>",
+      "${0}"
+    ]
+  },
+  "el-form-item__upload": {
+    "prefix": "lform-item_upload",
+    "body": [
+      "<el-form-item label='${1}'>",
+      "<Upload style='width: 200px; height:200px' v-model='${2}'></Upload>",
+      "</el-form-item>",
+      "${0}"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "ruoyi $modal.confirm": {
+    "prefix": "lconfirm",
+    "description": "this.$modal.confirm",
+    "body": [
+      "this.$modal",
+      "  .confirm('是否确认删除参数编号为\"' + Ids + '\"的数据项？')",
+      "  .then(function () {",
+      "    return ${1:delDemo}(Ids);",
+      "  })",
+      "  .then(() => {",
+      "    this.getList();",
+      "    this.$modal.msgSuccess(\"删除成功\");",
+      "  })",
+      "  .catch(() => {});",
+      ""
+    ]
+  }
+}

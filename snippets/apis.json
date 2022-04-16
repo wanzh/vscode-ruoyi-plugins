@@ -1,0 +1,80 @@
+{
+  "ruoyi import api": {
+    "prefix": "limport api",
+    "description": "",
+    "body": ["import { ${2} } from \"@/api/${1}\";"]
+  },
+
+  "l-api-list": {
+    "prefix": "lapi list",
+    "description": "查询列表",
+    "body": [
+      "// 查询列表",
+      "export function list${1:demo}(query) {\r",
+      "  return request({\r",
+      "    url: '/${2:demo}/${3:list}',\r",
+      "    method: 'get',\r",
+      "    params: query,\r",
+      "  })\r",
+      "}\r",
+      ""
+    ]
+  },
+  "l-api-get": {
+    "prefix": "lapi get",
+    "description": "查询详细",
+    "body": [
+      "\r",
+      "// 查询详细",
+      "export function get${1:Demo}(id) {\r",
+      "  return request({\r",
+      "    url: '/${2:demo}/' + id,\r",
+      "    method: 'get'\r",
+      "  })\r",
+      "}"
+    ]
+  },
+  "l-api-add": {
+    "prefix": "lapi add",
+    "description": "新增",
+    "body": [
+      "// 新增",
+      "export function add${1:Demo}(data) {\r",
+      "  return request({\r",
+      "    url: '/${2:demo}',\r",
+      "    method: 'post',\r",
+      "    data: data\r",
+      "  })\r",
+      "}"
+    ]
+  },
+  "l-api-update": {
+    "prefix": "lapi update",
+    "description": "修改",
+    "body": [
+      "// 修改",
+      "export function update${1:Demo}(data) {",
+      "  return request({",
+      "    url: '/${2:demo}',",
+      "    method: 'put',",
+      "    data: data",
+      "  })",
+      "}",
+      "",
+      ""
+    ]
+  },
+  "l-api-del": {
+    "prefix": "lapi del",
+    "description": "删除",
+    "body": [
+      "// 删除",
+      "export function del${1:Demo}(id) {\r",
+      "  return request({\r",
+      "    url: '/${2:demo}/' + id,\r",
+      "    method: 'delete'\r",
+      "  })\r",
+      "}"
+    ]
+  }
+}

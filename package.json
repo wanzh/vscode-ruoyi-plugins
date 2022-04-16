@@ -1,40 +1,80 @@
 {
   "name": "vscode-ruoyi-plugins",
-	"displayName": "vscode-ruoyi-plugins",
-	"description": "",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.66.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-        "onCommand:vscode-ruoyi-plugins.helloWorld"
-	],
-	"main": "./extension.js",
-	"contributes": {
-		"commands": [{
-            "command": "vscode-ruoyi-plugins.helloWorld",
-            "title": "Hello World"
-
-		}]
-	},
-	"scripts": {
-		"lint": "eslint .",
-		"pretest": "npm run lint",
-		"test": "node ./test/runTest.js"
-	},
-	"devDependencies": {
-        "@types/vscode": "^1.66.0",
-        "@types/glob": "^7.2.0",
-        "@types/mocha": "^9.1.0",
-        "@types/node": "14.x",
-        "eslint": "^8.11.0",
-        "glob": "^7.2.0",
-        "mocha": "^9.2.2",
-        "typescript": "^4.5.5",
-        "@vscode/test-electron": "^2.1.3"
-    }
-
+  "displayName": "ruoyi",
+  "description": "若依代码片段及代码提示",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.66.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/apis.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/base.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/dict.json"
+      },
+      {
+        "language": "vue-html",
+        "path": "./snippets/form.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/import.json"
+      },
+      {
+        "language": "vue-html",
+        "path": "./snippets/input.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/message.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/router.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/rules.json"
+      },
+      {
+        "language": "vue-html",
+        "path": "./snippets/table.json"
+      },
+      {
+        "language": "vue-html",
+        "path": "./snippets/wrapper.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.66.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "14.x",
+    "eslint": "^8.11.0",
+    "glob": "^7.2.0",
+    "mocha": "^9.2.2",
+    "typescript": "^4.5.5",
+    "@vscode/test-electron": "^2.1.3"
+  }
 }

@@ -1,0 +1,13 @@
+{
+  "options template": {
+    "prefix": "ldict_opt",
+    "body": [
+      "export const ${1}_opts = [",
+      "\t{",
+      "\t\tvalue: '${2}',",
+      "\t\tlabel: '${3}'",
+      "\t},",
+      "]"
+    ]
+  }
+}

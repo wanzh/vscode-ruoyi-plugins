@@ -1,0 +1,22 @@
+{
+  "lrouterjs": {
+    "prefix": "lrouterjs\r",
+    "description": "配置路由",
+    "body": [
+      "{\r",
+      "    path: '/${1:demo}',\r",
+      "    component: Layout,\r",
+      "    hidden: false,\r",
+      "    redirect: 'noredirect',\r",
+      "    children: [\r",
+      "      {\r",
+      "        path: 'list',\r",
+      "        component: () => import('@/views/${1}/index'),\r",
+      "        name: '${1}List',\r",
+      "        meta: { title: '个人中心', icon: 'user' }\r",
+      "      }\r",
+      "    ]\r",
+      "  }"
+    ]
+  }
+}

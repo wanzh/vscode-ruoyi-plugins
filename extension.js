@@ -1,36 +1,203 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-const vscode = require('vscode');
+const vscode = require('vscode')
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+module.exports.activate = function activate(context) {
+  const provider2 = vscode.languages.registerCompletionItemProvider(
+    'vue',
+    {
+      provideCompletionItems(document, position) {
+        const linePrefix = document
+          .lineAt(position)
+          .text.substr(0, position.character)
+        if (linePrefix.endsWith('this.')) {
+          return [
+            new vscode.CompletionItem(
+              '$modal',
+              vscode.CompletionItemKind.Class
+            ),
+            new vscode.CompletionItem('$tab', vscode.CompletionItemKind.Class),
+            new vscode.CompletionItem('$auth', vscode.CompletionItemKind.Class),
+            new vscode.CompletionItem(
+              '$cache',
+              vscode.CompletionItemKind.Class
+            ),
+            new vscode.CompletionItem(
+              '$download',
+              vscode.CompletionItemKind.Class
+            ),
+          ]
+        }
+        if (linePrefix.endsWith('this.$tab.')) {
+          return [
+            new vscode.CompletionItem(
+              'openPage()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'updatePage()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'closeOpenPage()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'refreshPage()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'closeAllPage()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'closeLeftPage()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'closeRightPage()',
+              vscode.CompletionItemKind.Method
+            ),
+          ]
+        }
 
-/**
- * @param {vscode.ExtensionContext} context
- */
-function activate(context) {
+        if (linePrefix.endsWith('this.$modal.')) {
+          return [
+            new vscode.CompletionItem(
+              'msg()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'msgError()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'msgSuccess()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'msgWarning()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'alert()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'alertError()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'alertSuccess()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'alertWarning()',
+              vscode.CompletionItemKind.Method
+            ),
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "vscode-ruoyi-plugins" is now active!');
+            new vscode.CompletionItem(
+              'notify()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'notifyError()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'notifySuccess()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'notifyWarning()',
+              vscode.CompletionItemKind.Method
+            ),
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('vscode-ruoyi-plugins.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
+            new vscode.CompletionItem(
+              'confirm()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'loading()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'closeLoading()',
+              vscode.CompletionItemKind.Method
+            ),
+          ]
+        }
+        if (linePrefix.endsWith('this.$auth.')) {
+          return [
+            new vscode.CompletionItem(
+              'hasPermi()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'hasPermiOr()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'hasPermiAnd()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'hasRole()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'hasRoleOr()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'hasRoleAnd()',
+              vscode.CompletionItemKind.Method
+            ),
+          ]
+        }
+        if (linePrefix.endsWith('this.$cache.')) {
+          return [
+            new vscode.CompletionItem(
+              'local.set()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'local.setJSON()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'session.set()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'session.setJSON()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'local.remove()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'session.remove()',
+              vscode.CompletionItemKind.Method
+            ),
+          ]
+        }
+        if (linePrefix.endsWith('this.$cache.')) {
+          return [
+            new vscode.CompletionItem(
+              'zip()',
+              vscode.CompletionItemKind.Method
+            ),
+            new vscode.CompletionItem(
+              'saveAs()',
+              vscode.CompletionItemKind.Method
+            ),
+          ]
+        }
+        return undefined
+      },
+    },
+    '.'
+  )
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from vscode-ruoyi-plugins!');
-	});
-
-	context.subscriptions.push(disposable);
-}
-
-// this method is called when your extension is deactivated
-function deactivate() {}
-
-module.exports = {
-	activate,
-	deactivate
+  context.subscriptions.push(provider2)
 }
