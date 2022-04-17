@@ -6,7 +6,7 @@
   "import from utils": {
     "prefix": "limport_util",
     "body": ["import { ${1} } from '@/utils/${2}'"]
-  }，
+  },
   "import from dict": {
     "prefix": "limport_dict",
     "body": ["import { ${1} } from '@/dict/${2}'"]
